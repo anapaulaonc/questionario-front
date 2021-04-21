@@ -1,12 +1,9 @@
-import logo from './logo.svg';
-import ForYou from './pages/foryou/foryou';
 import './App.css';
+import Routes from './Route';
 
 function App() {
   return (
-    <div className="App">
-        <ForYou/>
-    </div>
+    <Routes/>
   );
 }
 
