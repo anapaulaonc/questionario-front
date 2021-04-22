@@ -1,0 +1,11 @@
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.input-error{
+    display: flex;
+    justify-content: right;
+    font-size: small;
+}
