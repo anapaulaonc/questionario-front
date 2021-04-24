@@ -1,0 +1,45 @@
+.Container{
+    background-color: #D9D9D9;
+    width: 100vw;
+    height: 100vh;
+}   
+
+.Image{
+    border-radius: 100%;
+    max-width: 20rem;
+    margin-bottom: 1rem;
+
+}
+
+.Line{
+    background-color: #000000;
+    position: relative;
+    top: 8rem;
+}
+
+.ImageContainer{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.ProfileName{
+    font-family: Roboto Mono;
+}
+
+.SurveyContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+
+}
+
+
+.ContentContainer {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 15vh;
+    left: 10vw;
+}
