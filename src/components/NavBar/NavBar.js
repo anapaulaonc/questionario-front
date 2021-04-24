@@ -10,7 +10,10 @@ class NavBar extends React.Component {
     render() {
         return(
             <div className="NavBar">
-                <div className="icons"><img src={profile_icon}></img></div>
+                <div className="icons">
+                    
+                    <img src={profile_icon}></img>
+                </div>
                 <div className="icons"><img src={create_quest_icon}></img></div>
                 <div className="icons"><img src={notification_icon}></img></div>
             </div>

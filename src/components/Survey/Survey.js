@@ -10,8 +10,8 @@ class Survey extends React.Component {
     render() {
         return (
             <div className="Survey">
-                <div className="container">
-                    <div className="title">{survey.title}</div>
+                <div className="survey-container">
+                    <div className="survey-title">{survey.title}</div>
                     <div className="author">{survey.author}</div>
                 </div>
             </div>

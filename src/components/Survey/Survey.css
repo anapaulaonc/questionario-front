@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-.container {
+.survey-container {
     border: 3px solid #2c2c2c;
     background-color: #fff;
     border-radius: 4px;
@@ -13,7 +13,7 @@
     padding: 1% 1% 1% 1%;
 }
 
-.title {
+.survey-title {
     font-family: 'Roboto Mono';
     font-size: 3.5vh;
     font-weight: bold; 

@@ -7,7 +7,7 @@ export default function Input(props) {
         <div className = "container">
             <label>{props.text}</label>
             <br/>
-            <input id={props.id} type={props.type} name={props.name}/>
+            <input placeholder={props.placeholder} id={props.id} type={props.type} name={props.name}/>
         </div>
     )
 } 
