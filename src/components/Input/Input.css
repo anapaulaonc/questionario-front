@@ -1,11 +1,18 @@
 .input-container{
     display: flex;
     justify-content: space-between;
-    
 }
 
 .input-error{
     display: flex;
     justify-content: right;
     font-size: small;
+}
+
+input{
+    background-color: #c4c4c4;
+}
+
+.btn-primary{
+    background-color: black;
 }
