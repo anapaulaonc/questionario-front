@@ -22,6 +22,9 @@ const Routes = () => (
             <Route exact path = "/recoverPassword">
                 <RecoverPassword/>
             </Route>
+            <Route exact path = "/forYou">
+                <ForYou/>
+            </Route>
         </Switch>
     </BrowserRouter>
 );
