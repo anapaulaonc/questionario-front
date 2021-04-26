@@ -17,7 +17,7 @@ const Routes = () => (
                 <SignUp/>
             </Route>
             <Route exact path = "/">
-                <ForYou/>
+                <Login/>
             </Route>
             <Route exact path = "/recoverPassword">
                 <RecoverPassword/>

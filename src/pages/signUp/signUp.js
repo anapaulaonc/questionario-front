@@ -35,13 +35,21 @@ export default function Login() {
 
     return(
         <>
-        <div className = "container">
-            <form className = "form--signUp" onSubmit={login}>
-                <Input name= "email" id="email" type="email" text="Email" err={err1}/>
-                <Input name= "password" id="password" type="password" text="Senha"/>
-                <Input name= "password_confirmation" id="password_confirmation" type="password" text="Confirmar senha"/>
-                <Button text = "cadastrar" type= "submit"/>
-            </form>
+        <div className = "Container">
+            <div className ="row login">
+                <div className="col-6 logo-section">
+                    <h3>Questionários.com</h3>
+                </div>
+                <div className="col-6 input-section">
+                    <h1>Cadastre-se</h1>
+                    <form className = "form--signUp" onSubmit={login}>
+                        <Input name= "email" id="email" type="email" text="Email" err={err1}/>
+                        <Input name= "password" id="password" type="password" text="Senha"/>
+                        <Input name= "password_confirmation" id="password_confirmation" type="password" text="Confirmar senha"/>
+                        <Button text = "cadastrar" type= "submit"/>
+                    </form>
+                </div>
+            </div>    
         </div>
         </>
     )
