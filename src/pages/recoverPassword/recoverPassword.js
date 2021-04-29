@@ -24,7 +24,8 @@ export default function RecoverPassword() {
             <form>
             <Input name= "email" id="email" type="email" placeholder="Email"/>
             <Input name= "password" id="password" type="password" placeholder="Nova senha"/>
-            <Input name= "password_confirmation" id="password_confirmation" type="password" text="NOva senha"/>
+            <Input name= "password_confirmation" id="password_confirmation" type="password" placeholder="Confirmar nova senha"/>
+            
             </form>
         </div>
         </>

@@ -52,9 +52,9 @@ export default function Login() {
                 <div className="col-6 input-section">
                     <h1>Cadastre-se</h1>
                     <form className = "form--signUp" onSubmit={login}>
-                        <Input name= "email" id="email" type="email" text="Email" err={err1}/>
-                        <Input name= "password" id="password" type="password" text="Senha" err={err2}/>
-                        <Input name= "password_confirmation" id="password_confirmation" type="password" text="Confirmar senha" err={err3}/>
+                        <Input name= "email" id="email" type="email" placeholder="Email" err={err1}/>
+                        <Input name= "password" id="password" type="password" placeholder="Senha" err={err2}/>
+                        <Input name= "password_confirmation" id="password_confirmation" type="password" placeholder="Confirmar senha" err={err3}/>
                         <Button text = "cadastrar" type= "submit"/>
                     </form>
                 </div>
