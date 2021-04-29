@@ -4,6 +4,7 @@ import Login from './pages/login/login';
 import ForYou from './pages/foryou/foryou';
 import SignUp from './pages/signUp/signUp'
 import RecoverPassword from './pages/recoverPassword/recoverPassword';
+import DefinePassword from './pages/definePassword/definePassword';
 
 // Usar comando << npm install react-router-dom >> para instalar o pacote de rotas.
 
@@ -21,6 +22,9 @@ const Routes = () => (
             </Route>
             <Route exact path = "/recoverPassword">
                 <RecoverPassword/>
+            </Route>
+            <Route exact path = "/definePassword">
+                <DefinePassword/>
             </Route>
             <Route exact path = "/forYou">
                 <ForYou/>
