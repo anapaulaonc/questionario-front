@@ -1,0 +1,25 @@
+.Container{
+    background-color: #D9D9D9;
+    width: 100vw;
+    height: 100vh;
+}   
+
+.login{
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo-section{
+    background-color: black;
+    font-family: Roboto Mono;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.input-section{
+    display: flex;
+    align-items: center;
+}
