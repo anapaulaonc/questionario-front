@@ -38,6 +38,7 @@ export default function Login() {
                         <Input name= "password" id="password" type="password" placeholder="Senha"/>
                         <button type= "submit" class="btn btn-primary">Entrar</button>
                         <button class="btn btn-primary"  onClick= {() => choosepath.push("/signUp")}>Cadastre-se</button>
+                        <button class="btn btn-primary"  onClick= {() => choosepath.push("/recoverPassword")}>Esqueci minha senha</button>
                     </form>
                 </div>
             </div>
