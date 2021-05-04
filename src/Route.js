@@ -5,6 +5,7 @@ import ForYou from './pages/foryou/foryou';
 import SignUp from './pages/signUp/signUp'
 import RecoverPassword from './pages/recoverPassword/recoverPassword';
 import DefinePassword from './pages/definePassword/definePassword';
+import CreateSurvey from './pages/createSurvey/createSurvey';
 
 // Usar comando << npm install react-router-dom >> para instalar o pacote de rotas.
 
@@ -28,6 +29,9 @@ const Routes = () => (
             </Route>
             <Route exact path = "/forYou">
                 <ForYou/>
+            </Route>
+            <Route exact path = "/createSurvey">
+                <CreateSurvey/>
             </Route>
         </Switch>
     </BrowserRouter>
