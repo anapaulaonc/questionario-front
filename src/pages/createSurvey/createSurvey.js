@@ -1,8 +1,65 @@
-import React, { useState, checkBox } from "react"
+import React, { useState } from "react"
+import axios from "axios"
 import Input from "../../components/Input/Input"
 import './createSurvey.css'
 
 export default function CreateSurvey() {
+    const survey = (event) => {
+        event.preventDefault();
+
+
+        const [title_survey, title_a, select_a, title_c, questionA, questionB, questionC, questionD, select_c, title_d] = Array.from(event.target.elements).map(
+            (el) => el.value
+        )
+        
+        axios
+            .post("http://localhost:3001/surveys", {survey:{title: title_survey}})
+            .then(response => {
+                if(response.status == 201){
+                    const survey_id = response.data.id
+                    axios
+                        .post("http://localhost:3001/boolean_questions", {title: title_a, answer: select_a, survey_id})
+                        .then(response => {
+                            if(response.status == 201){
+                                console.log(response.data)
+                            }             
+                        })
+                        .catch(err =>{
+                            console.log(err.response.data);
+                        })
+                    
+                    axios
+                        .post("http://localhost:3001/alternative_questions", {title: title_c, answer: select_c, survey_id, questionA, questionB, questionC, questionD})
+                        .then(response => {
+                            if(response.status == 201){
+                                console.log(response.data)
+                            }             
+                        })
+                        .catch(err =>{
+                            console.log(err.response.data);
+                        })
+                    
+                    axios
+                        .post("http://localhost:3001/discursive_questions", {title: title_d, survey_id})
+                        .then(response => {
+                            if(response.status == 201){
+                                console.log(response.data)
+                            }             
+                        })
+                        .catch(err =>{
+                            console.log(err.response.data);
+                        })
+
+
+                }     
+            })
+            .catch(err =>{
+                console.log(err.response.data);
+            })
+
+        
+        
+    }
     
     return(
         <>
@@ -12,22 +69,30 @@ export default function CreateSurvey() {
                     <h3>Criar Questionário</h3>
                 </div>
                 <div className="col-6 input-section">
-                    <form className = "form--login" onSubmit={() => {console.log("nada ainda")}}>
+                    <form className = "form--login" onSubmit={survey}>
                         <Input name= "title_survey" id="title_survey" type="text" placeholder="Titulo do quest"/>{/* titulo do Questionário  */}
-                        <Input name= "title_a" id="title_a" type="text" placeholder="Titulo da questão tipo_a"/>
+                        <Input name= "title_a" id="title_a" type="text" placeholder="Titulo da questão tipo a"/>
                         <span>resposta</span>
-                        <Input name= "" id="" type="checkbox" placeholder="Email" title={"F"} checked={() => {console.log("pensar em alguma forma de confirmar se está confirmado")}}/>
-                        <Input name= "" id="" type="checkbox" placeholder="Email" title={"T"} checked={() => {console.log("pensar em alguma forma de confirmar se está confirmado")}}/>
-                        <Input name= "title_c" id="title_c" type="text" placeholder="Titulo da questão tipo_c"/>
-                        <Input name= "quest1" id="quest1" type="text" placeholder="questao 1"/>
-                        <Input name= "quest2" id="quest2" type="text" placeholder="questao 2"/>
-                        <Input name= "quest3" id="quest3" type="text" placeholder="questao 3"/>
-                        <Input name= "quest4" id="quest4" type="text" placeholder="questao 4"/>
+                        <select name = "select_a">
+                            <option value = "true">Verdadeiro</option>
+                            <option value = "false">Falso</option>
+                        </select>
+                        <Input name= "title_c" id="title_c" type="text" placeholder="Titulo da questão tipo c"/>
+                        <Input name= "questionA" id="questionA" type="text" placeholder="questao A"/>
+                        <Input name= "questionB" id="questionB" type="text" placeholder="questao B"/>
+                        <Input name= "questionC" id="questionC" type="text" placeholder="questao C"/>
+                        <Input name= "questionD" id="questionD" type="text" placeholder="questao D"/>
                         <span>resposta</span>
-                        <Input name= "" id="" type="checkbox" placeholder="Email" title={"A"} checked={() => {console.log("pensar em alguma forma de confirmar se está confirmado")}}/>
-                        <Input name= "" id="" type="checkbox" placeholder="Email" title={"B"} checked={() => {console.log("pensar em alguma forma de confirmar se está confirmado")}}/>
-                        <Input name= "" id="" type="checkbox" placeholder="Email" title={"C"} checked={() => {console.log("pensar em alguma forma de confirmar se está confirmado")}}/>
-                        <Input name= "" id="" type="checkbox" placeholder="Email" title={"D"} checked={() => {console.log("pensar em alguma forma de confirmar se está confirmado")}}/>
+                        <select name = "select_c">
+                            <option value = "A">A</option>
+                            <option value = "B">B</option>
+                            <option value = "C">C</option>
+                            <option value = "D">D</option>
+                        </select>
+                        <br/>
+                        <Input name= "title_d" id="title_d" type="text" placeholder="Titulo da questão tipo D"/>
+                        <button type= "submit" class="btn btn-primary">Criar</button>
+                        
 
                         
                     </form>
