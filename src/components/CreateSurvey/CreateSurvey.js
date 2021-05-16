@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./CreateSurvey.css";
 
 function CreateSurvey() {
   let { id } = useParams();
@@ -120,96 +121,93 @@ function CreateSurvey() {
   };
 
   return (
-    <div>
-      <h1>Cria Questionario</h1>
-      <input
-        name="title"
-        value={title}
-        type="title"
-        text="title"
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      {/* <button onClick={(e) => changeTitle(e)} > Escreva o titulo </button> */}
-      <br />
-      {discursiveQuestion.map((d, i) => {
-        return (
-          <input
-            key={i}
-            placeholder="Titulo da questão discursiva"
-            onChange={(e) =>
-              changeInput(i, "discursive", "title", e.target.value)
-            }
-            value={d.title}
-          />
-        );
-      })}
-      <br />
-      <button onClick={addDiscursive} type="button">
-        Adicionar questao discursiva
-      </button>
-      <br />
-      {booleanQuestion.map((b, i) => {
-        return (
-          <input
-            key={i}
-            placeholder="Titulo da questão booleana"
-            onChange={(e) => changeInput(i, "boolean", "title", e.target.value)}
-            value={b.title}
-          />
-        );
-      })}
-      <br />
-      <button onClick={addBoolean} type="button">
-        Adicionar questao booleana
-      </button>
-      <br />
-      {alternativeQuestion.map((a, i) => {
-        return (
-          <React.Fragment key={i}>
+    <div className="create-survey-section">
+      <div className="create-survey-main">
+        <h1>Criar Questionário</h1>
+        <input
+          id="survey-title"
+          name="title"
+          value={title}
+          type="title"
+          text="title"
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        {/* <button onClick={(e) => changeTitle(e)} > Escreva o titulo </button> */}
+        {discursiveQuestion.map((d, i) => {
+          return (
             <input
-              placeholder="Titulo da questão alternativa"
+              key={i}
+              placeholder="Escreva sua pergunta"
               onChange={(e) =>
-                changeInput(i, "alternative", "title", e.target.value)
+                changeInput(i, "discursive", "title", e.target.value)
               }
-              value={a.title}
+              value={d.title}
             />
+          );
+        })}
+        <button onClick={addDiscursive} type="button">
+          Adicionar questão discursiva
+        </button>
+        {booleanQuestion.map((b, i) => {
+          return (
             <input
-              placeholder="Alternativa A"
-              onChange={(e) =>
-                changeInput(i, "alternative", "questionA", e.target.value)
-              }
-              value={a.questionA}
+              key={i}
+              placeholder="Escreva sua pergunta"
+              onChange={(e) => changeInput(i, "boolean", "title", e.target.value)}
+              value={b.title}
             />
-            <input
-              placeholder="Alternativa B"
-              onChange={(e) =>
-                changeInput(i, "alternative", "questionB", e.target.value)
-              }
-              value={a.questionB}
-            />
-            <input
-              placeholder="Alternativa C"
-              onChange={(e) =>
-                changeInput(i, "alternative", "questionC", e.target.value)
-              }
-              value={a.questionC}
-            />
-            <input
-              placeholder="Alternativa D"
-              onChange={(e) =>
-                changeInput(i, "alternative", "questionD", e.target.value)
-              }
-              value={a.questionD}
-            />
-          </React.Fragment>
-        );
-      })}
-      <br />
-      <button onClick={addAlternative} type="button">
-        Adicionar questao alternativa
-      </button>
-      <br />
-      <button onClick={saveSurvey}> Criar Questionario</button>
+          );
+        })}
+        <button onClick={addBoolean} type="button">
+          Adicionar questão booleana
+        </button>
+        {alternativeQuestion.map((a, i) => {
+          return (
+            <React.Fragment key={i}>
+              <input
+                class="survey-question"
+                placeholder="Escreva sua pergunta"
+                onChange={(e) =>
+                  changeInput(i, "alternative", "title", e.target.value)
+                }
+                value={a.title}
+              />
+              <input
+                placeholder="Alternativa A"
+                onChange={(e) =>
+                  changeInput(i, "alternative", "questionA", e.target.value)
+                }
+                value={a.questionA}
+              />
+              <input
+                placeholder="Alternativa B"
+                onChange={(e) =>
+                  changeInput(i, "alternative", "questionB", e.target.value)
+                }
+                value={a.questionB}
+              />
+              <input
+                placeholder="Alternativa C"
+                onChange={(e) =>
+                  changeInput(i, "alternative", "questionC", e.target.value)
+                }
+                value={a.questionC}
+              />
+              <input
+                placeholder="Alternativa D"
+                onChange={(e) =>
+                  changeInput(i, "alternative", "questionD", e.target.value)
+                }
+                value={a.questionD}
+              />
+            </React.Fragment>
+          );
+        })}
+        <button onClick={addAlternative} type="button">
+          Adicionar questão alternativa
+        </button>
+        <button onClick={saveSurvey}>Criar</button>
+      </div>
     </div>
   );
 }
