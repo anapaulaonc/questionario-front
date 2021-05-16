@@ -18,7 +18,7 @@ function CreateSurvey() {
         setTitle(res.data.title);
       })
       .catch(() => {
-        console.log("ERRAAAADO dentro do catch");
+        console.log("ERRAAAADO dentro do catch use effect");
       });
   }, []);
 
@@ -32,6 +32,7 @@ function CreateSurvey() {
       .catch(() => {
         console.log("ERRAAAADO dentro do catch");
       });
+
     discursiveQuestion.forEach((d) => {
       axios
         .post("http://localhost:3001/discursive_questions", {
