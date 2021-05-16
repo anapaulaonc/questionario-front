@@ -137,6 +137,7 @@ function CreateSurvey() {
         {discursiveQuestion.map((d, i) => {
           return (
             <input
+              class="survey-input"
               key={i}
               placeholder="Escreva sua pergunta"
               onChange={(e) =>
@@ -146,20 +147,21 @@ function CreateSurvey() {
             />
           );
         })}
-        <button onClick={addDiscursive} type="button">
+        <button class="survey-button" onClick={addDiscursive} type="button">
           Adicionar questão discursiva
         </button>
         {booleanQuestion.map((b, i) => {
           return (
             <input
               key={i}
+              class="survey-input"
               placeholder="Escreva sua pergunta"
               onChange={(e) => changeInput(i, "boolean", "title", e.target.value)}
               value={b.title}
             />
           );
         })}
-        <button onClick={addBoolean} type="button">
+        <button class="survey-button" onClick={addBoolean} type="button">
           Adicionar questão booleana
         </button>
         {alternativeQuestion.map((a, i) => {
@@ -174,6 +176,7 @@ function CreateSurvey() {
                 value={a.title}
               />
               <input
+                class="survey-input"
                 placeholder="Alternativa A"
                 onChange={(e) =>
                   changeInput(i, "alternative", "questionA", e.target.value)
@@ -181,6 +184,7 @@ function CreateSurvey() {
                 value={a.questionA}
               />
               <input
+                class="survey-input"
                 placeholder="Alternativa B"
                 onChange={(e) =>
                   changeInput(i, "alternative", "questionB", e.target.value)
@@ -188,6 +192,7 @@ function CreateSurvey() {
                 value={a.questionB}
               />
               <input
+                class="survey-input"
                 placeholder="Alternativa C"
                 onChange={(e) =>
                   changeInput(i, "alternative", "questionC", e.target.value)
@@ -195,6 +200,7 @@ function CreateSurvey() {
                 value={a.questionC}
               />
               <input
+                class="survey-input"
                 placeholder="Alternativa D"
                 onChange={(e) =>
                   changeInput(i, "alternative", "questionD", e.target.value)
@@ -204,10 +210,10 @@ function CreateSurvey() {
             </React.Fragment>
           );
         })}
-        <button onClick={addAlternative} type="button">
+        <button class="survey-button" onClick={addAlternative} type="button">
           Adicionar questão alternativa
         </button>
-        <button onClick={saveSurvey}>Criar</button>
+        <button class="survey-button" onClick={saveSurvey}>Criar</button>
       </div>
     </div>
   );

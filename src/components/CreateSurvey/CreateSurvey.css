@@ -2,7 +2,16 @@
     box-sizing: border-box;
 }
 
-button {
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+.survey-button {
     background-color: #2c2c2c;
     border: none;
     border-radius: 3px;
@@ -14,12 +23,12 @@ button {
     transition-duration: 0.15s;
 }
 
-button:hover {
+.survey-button:hover {
     background-color: #FFF;
     color: #2c2c2c;
 }
 
-input {
+.survey-input {
     justify-content: center;
     border: none;
     display: block;
@@ -29,7 +38,7 @@ input {
     width: 70%;
 }
 
-input:focus {
+.survey-input:focus {
     outline: none;
     border: none;
 }
