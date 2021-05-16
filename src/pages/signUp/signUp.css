@@ -1,8 +1,21 @@
-.container{
-    display: flex;
-    justify-content: center;
+.logo-section {
+    width: 50%;
 }
-.form--signUp {
-    width: 22rem;
-    
+
+.input-section {
+    margin: auto;
+    width: 50%;
+    display: block;
+}
+
+.input-section h1 {
+    font-family: 'Roboto Mono';
+}
+
+.button {
+    color: white;
+    background-color: black;
+    font-family: 'Roboto Mono';
+    font-weight: 600;
+    text-transform: uppercase;
 }
