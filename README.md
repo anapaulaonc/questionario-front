@@ -45,3 +45,8 @@ node -v
 npm -v
 ```
 
+Começar o server
+```sh
+yarn add
+yarn start
+```
