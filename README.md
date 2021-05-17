@@ -10,6 +10,7 @@ Pedro Moura - 190018810
 
 Roberto Caixeta Ribeiro Oliveira- 190019611
 
+Use a branch develop!
 
 Node e NPM
 
