@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import "./profile.css";
 
 function ProfilePage() {
   let { id } = useParams();
@@ -29,17 +30,18 @@ function ProfilePage() {
   }, []);
 
   return (
-    <div>
+    <div className="profile-section">
       <NavBar />
-      <h1>Dados dos questionarios criados por mim:</h1>
-
-      {surveys.map((s) => {
-        return (
-          <div>
-            <h2>{s.title}</h2>
-          </div>
-        );
-      })}
+      <div className="profile-main">
+        <h1>Questionários criados por mim</h1>
+        {surveys.map((s) => {
+          return (
+            <div className="profile-survey">
+              <h2>{s.title}</h2>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -23,6 +23,7 @@ function ForYou() {
     <div className="foryou-section">
       <NavBar />
       <div className="foryou-main">
+        <h1>For You</h1>
         {surveys.map((s) => {
           return (
             <div
@@ -33,7 +34,7 @@ function ForYou() {
               }}
             >
               <h1>{s.title}</h1>
-              <h2>por: {s.user.email}</h2>
+              <h2>criado por {s.user.email}</h2>
             </div>
           );
         })}

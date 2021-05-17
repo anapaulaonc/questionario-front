@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import "./SurveyData.css";
 
 function SurveyData() {
   let { id } = useParams();

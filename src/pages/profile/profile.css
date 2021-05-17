@@ -6,7 +6,7 @@ body {
     background-color: #c2c2c2;
 }
 
-.foryou-main {
+.profile-main {
     background-color: #c4c4c4;
     border-radius: 1em;
     font-family: 'Roboto Mono';
@@ -15,38 +15,30 @@ body {
     width: 90%;
 }
 
-.foryou-main h1 {
+.profile-main h1{
     border-bottom: 2px solid #2c2c2c;
     font-family: 'Share Tech Mono', monospace;
-    margin: 0 auto;
     margin-bottom: 0.8em;
     text-align: center;
     text-transform: uppercase;
-    width: 100%;
 }
 
-.foryou-survey {
+.profile-survey {
     color: #fff;
     background-color: #2c2c2c;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 2em auto;
     padding: 1em;
     width: 60%;
 }
 
-.foryou-survey:hover {
+.profile-survey:hover {
     cursor: pointer; 
 }
 
-.foryou-survey h1 {
+.profile-survey h2 {
     font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
-}
-
-.foryou-survey h2 {
-    font-family: 'Roboto Mono';
-    font-size: 1em;
-    text-align: center;
 }
