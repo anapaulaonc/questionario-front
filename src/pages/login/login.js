@@ -18,6 +18,7 @@ export default function Login() {
         if (response.status == 200) {
           localStorage.setItem("token", response.data?.token);
           localStorage.setItem("id", response.data?.id);
+          localStorage.setItem("email", response.data?.email);
           choosepath.push("/foryou");
         }
       })

@@ -83,14 +83,9 @@ function SurveyData() {
     <div>
       <NavBar />
       <h1>Perfil</h1>
-
-      {surveys.map((survey) => {
-        return (
-          <div>
-            <h2>{survey.title}</h2>
-          </div>
-        );
-      })}
+      <div>
+        <h2>{survey.title}</h2>
+      </div>
     </div>
   );
 }

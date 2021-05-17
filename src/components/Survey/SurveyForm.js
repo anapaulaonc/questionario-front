@@ -55,7 +55,7 @@ function SurveyForm() {
           survey_id: survey.id,
           text: d.text,
           discursive_question_id: d.id,
-          email: user?.email ?? "",
+          email: localStorage.getItem("email"),
         })
         .then((res) => {
           console.log("resposta discursiva salva: ", res.data);
@@ -72,7 +72,7 @@ function SurveyForm() {
           survey_id: survey.id,
           answer: b.answer,
           boolean_question_id: b.id,
-          email: user?.email ?? "",
+          email: localStorage.getItem("email"),
         })
         .then((res) => {
           console.log("resposta boolean salva: ", res.data);
@@ -88,7 +88,7 @@ function SurveyForm() {
           survey_id: survey.id,
           text: a.text,
           alternative_question_id: a.id,
-          email: user?.email ?? "",
+          email: localStorage.getItem("email"),
         })
         .then((res) => {
           console.log("resposta alternativa salva: ", res.data);
@@ -196,9 +196,7 @@ function SurveyForm() {
               <div>
                 <textarea
                   onChange={(e) => addDiscursive(e.target.value, index)}
-                >
-                  {" "}
-                </textarea>
+                ></textarea>
               </div>
             </div>
           );
