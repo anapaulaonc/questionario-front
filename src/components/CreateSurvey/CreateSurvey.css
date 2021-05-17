@@ -19,7 +19,7 @@ input:focus {
     display: block;
     margin: 1em auto;
     padding: 0.3em;
-    width: 60%;
+    width: 30%;
     transition-duration: 0.15s;
 }
 
@@ -34,7 +34,7 @@ input:focus {
     display: block;
     margin: 0 auto;
     margin-bottom: 0.2em;
-    text-align: left;
+    text-align: center;
     width: 70%;
 }
 
@@ -53,13 +53,12 @@ input:focus {
     font-family: 'Roboto Mono';
     margin: 1em auto;
     padding: 1em 0.5em;
-    width: 60%;
+    width: 90%;
 }
 
 .create-survey-main h1 {
     border-bottom: 2px solid #2c2c2c;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.5em;
     margin-bottom: 0.8em;
     text-align: center;
     text-transform: uppercase;
@@ -71,14 +70,17 @@ input:focus {
     border: none;
     border-radius: 5px;
     color: black;
-    font-size: 1.7em;
+    display: block;
+    font-size: 2em;
     font-family: 'Share Tech Mono', monospace;
+    margin: 0 auto;
     margin-bottom: 0.5em;
+    overflow: visible;
     padding: 0.2em;
     text-align: center;
     text-transform: uppercase;
     transition: 0.3s;
-    width: 100%;
+    width: 50%;
 }
 
 #survey-title:focus {

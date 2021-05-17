@@ -3,6 +3,7 @@ import axios from "axios";
 import create_quest_icon from "../../assets/create-quest-icon.svg";
 import notification_icon from "../../assets/notification-icon.svg";
 import profile_icon from "../../assets/profile-icon.svg";
+import home_icon from "../../assets/home-icon.svg";
 import "./NavBar.css";
 import { useHistory } from "react-router-dom";
 
@@ -44,6 +45,14 @@ function NavBar() {
       </div>
       <div className="icons">
         <img src={notification_icon}></img>
+      </div>
+      <div
+        className="icons"
+        onClick={() => {
+          choosepath.push(`/foryou`);
+        }}
+      >
+        <img src={home_icon}></img>
       </div>
     </div>
   );
