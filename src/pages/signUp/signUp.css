@@ -1,21 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+.signup-page {
+    height: 100vh;
+    font-family: 'Share Tech Mono', monospace;
+}
+
 .logo-section {
+    background-color: #2c2c2c;
+    color: #c2c2c2;
+    float: left;
+    height: 100vh;
     width: 50%;
+}
+
+.logo{
+    font-size: 5;
+    position: relative;
+    margin: 0 auto;
+    letter-spacing: 0.5em;
+    width: 90%;
+    top: 40%;
+    text-transform: uppercase;
+}
+
+.down-logo {
+    float: right;
 }
 
 .input-section {
-    margin: auto;
+    background-color: #c2c2c2;
+    color: #2c2c2c;
+    float: left;
+    height: 100vh;
     width: 50%;
-    display: block;
 }
 
-.input-section h1 {
-    font-family: 'Roboto Mono';
-}
-
-.button {
-    color: white;
-    background-color: black;
-    font-family: 'Roboto Mono';
-    font-weight: 600;
+.signup-block {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    letter-spacing: 0.5em;
+    width: 90%;
+    top: 30%;
     text-transform: uppercase;
+}
+
+.signup-block h1 {
+    border-bottom: 2px solid #2c2c2c;
+    font-weight: 900;
+    margin-bottom: 0.8em;
+    cursor: auto;
+}
+
+.signup-block Input {
+    background-color: #c2c2c2;
+    border-radius: 5px;
+    font-family: 'Share Tech Mono', monospace;
+    display: block;
+    padding: 0.5em;
+    margin: 0 auto;
+    margin-bottom: 0.5em;
+    transition: 0.5s;
+    width: 70%;
+}
+
+.signup-block Input:focus {
+    background-color: #2c2c2c;
+    color: #c2c2c2;
+}
+
+.signup-block Button {
+    background-color: #2c2c2c;
+    color: #c2c2c2;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin: 1em auto 0;
+    padding: 0.5em;
+    outline: none;
+    transition: 0.5s;
+    text-transform: uppercase;
+}
+
+.signup-block Button:hover {
+    background-color: #fff;
+    color: #2c2c2c
+}
+
+.input-error {
+    display: block;
+    font-size: 0.8em;
+    color: red;
+    letter-spacing: 0.1em;
 }
