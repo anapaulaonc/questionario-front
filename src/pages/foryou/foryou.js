@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import "./foryou.css";
 
 function ForYou() {
   const [surveys, setSurveys] = useState([]);
@@ -19,21 +20,24 @@ function ForYou() {
   let choosepath = useHistory();
 
   return (
-    <div className="ForYou">
+    <div className="foryou-section">
       <NavBar />
-      {surveys.map((s) => {
-        return (
-          <div
-            key={s.id}
-            onClick={() => {
-              choosepath.push(`/questionario/${s.id}`);
-            }}
-          >
-            <h3>{s.title}</h3>
-            <h5>por: {s.user.email}</h5>
-          </div>
-        );
-      })}
+      <div className="foryou-main">
+        {surveys.map((s) => {
+          return (
+            <div
+              className="foryou-survey"
+              key={s.id}
+              onClick={() => {
+                choosepath.push(`/questionario/${s.id}`);
+              }}
+            >
+              <h1>{s.title}</h1>
+              <h2>por: {s.user.email}</h2>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

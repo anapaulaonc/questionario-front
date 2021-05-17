@@ -28,26 +28,24 @@ export default function Login() {
 
   return (
     <>
-      <div className="Container">
-        <div className="row login">
-          <div className="col-6 logo-section">
-            <h3>Questionários.com</h3>
+      <div className="login-page">
+        <div className="logo-section">
+          <div className="logo">
+            <h1 className="up-logo">Questionários</h1>
+            <h1 className="down-logo">.com</h1>
           </div>
-          <div className="col-6 input-section">
+        </div>
+        <div className="input-section">
+          <div className="login-block">
             <h1>Login</h1>
             <form className="form--login" onSubmit={login}>
-              <Input
-                name="email"
-                id="email"
-                type="email"
-                placeholder="Email"
-                err={err1}
-              />
+              <Input name="email" id="email" type="email" placeholder="Email" />
               <Input
                 name="password"
                 id="password"
                 type="password"
                 placeholder="Senha"
+                err={err1}
               />
               <button type="submit" class="btn btn-primary">
                 Entrar

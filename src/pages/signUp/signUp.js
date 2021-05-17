@@ -45,14 +45,17 @@ export default function Login() {
 
   return (
     <>
-      <div className="Container">
-        <div className="row login">
-          <div className="col-6 logo-section">
-            <h3>Questionários.com</h3>
+      <div className="signup-page">
+        <div className="logo-section">
+          <div className="logo">
+            <h1 className="up-logo">Questionários</h1>
+            <h1 className="down-logo">.com</h1>
           </div>
-          <div className="col-6 input-section">
+        </div>
+        <div className="input-section">
+          <div className="signup-block">
             <h1>Cadastre-se</h1>
-            <form className="form--signUp" onSubmit={login}>
+            <form className="form--signup" onSubmit={login}>
               <Input
                 name="email"
                 id="email"

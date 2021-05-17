@@ -7,3 +7,7 @@
 .icons {
     margin: 15px 0px 5px 10px;
 }
+
+.icons:hover {
+    cursor: pointer;
+}

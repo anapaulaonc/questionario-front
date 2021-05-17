@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
+import { useParams, useHistory } from "react-router-dom";
+import "./SurveyForm.css";
 
 function SurveyForm() {
+  let choosepath = useHistory();
   let { id } = useParams();
   const [survey, setSurvey] = useState({});
   const [user, setUser] = useState({});
@@ -57,6 +59,7 @@ function SurveyForm() {
         })
         .then((res) => {
           console.log("resposta discursiva salva: ", res.data);
+          choosepath.push("/foryou");
         })
         .catch(() => {
           console.log("ERRAAAADO dentro do catch");
@@ -118,65 +121,69 @@ function SurveyForm() {
   };
 
   return (
-    <div className="SurveyForm">
+    <div className="survey-form-section">
       <NavBar />
-      <div>
-        <h2>{survey.title}</h2>
-        <h5>Por: {user.email}</h5>
+      <div className="survey-form-main">
+        <h1>{survey.title}</h1>
+        <p className="survey-autor">Por: {user.email}</p>
 
         {survey?.set_alternative_question?.map((question, index) => {
           return (
             <div key={question?.id}>
-              <h4>{question.title}</h4>
+              <h2>{question.title}</h2>
               <div>
-                <input
-                  type="radio"
-                  value={question?.questionA}
-                  onChange={(e) => addAlternative(e.target.value, index)}
-                  checked={
-                    alternativeQuestion.filter(
-                      (e) => e?.text === question?.questionA
-                    ).length > 0
-                  }
-                />
-                {question?.questionA}
-                <br />
-                <input
-                  type="radio"
-                  value={question?.questionB}
-                  onChange={(e) => addAlternative(e.target.value, index)}
-                  checked={
-                    alternativeQuestion.filter(
-                      (e) => e?.text === question?.questionB
-                    ).length > 0
-                  }
-                />
-                {question?.questionB}
-                <br />
-                <input
-                  type="radio"
-                  value={question?.questionC}
-                  onChange={(e) => addAlternative(e.target.value, index)}
-                  checked={
-                    alternativeQuestion.filter(
-                      (e) => e?.text === question?.questionC
-                    ).length > 0
-                  }
-                />
-                {question?.questionC}
-                <br />
-                <input
-                  type="radio"
-                  value={question?.questionD}
-                  onChange={(e) => addAlternative(e.target.value, index)}
-                  checked={
-                    alternativeQuestion.filter(
-                      (e) => e?.text === question?.questionD
-                    ).length > 0
-                  }
-                />
-                {question?.questionD}
-                <br />
+                <div className="question-alternative">
+                  <input
+                    type="radio"
+                    value={question?.questionA}
+                    onChange={(e) => addAlternative(e.target.value, index)}
+                    checked={
+                      alternativeQuestion.filter(
+                        (e) => e?.text === question?.questionA
+                      ).length > 0
+                    }
+                  />
+                  <label>{question?.questionA}</label>
+                </div>
+                <div className="question-alternative">
+                  <input
+                    type="radio"
+                    value={question?.questionB}
+                    onChange={(e) => addAlternative(e.target.value, index)}
+                    checked={
+                      alternativeQuestion.filter(
+                        (e) => e?.text === question?.questionB
+                      ).length > 0
+                    }
+                  />
+                  <label>{question?.questionB}</label>
+                </div>
+                <div className="question-alternative">
+                  <input
+                    type="radio"
+                    value={question?.questionC}
+                    onChange={(e) => addAlternative(e.target.value, index)}
+                    checked={
+                      alternativeQuestion.filter(
+                        (e) => e?.text === question?.questionC
+                      ).length > 0
+                    }
+                  />
+                  <label>{question?.questionC}</label>
+                </div>
+                <div className="question-alternative">
+                  <input
+                    type="radio"
+                    value={question?.questionD}
+                    onChange={(e) => addAlternative(e.target.value, index)}
+                    checked={
+                      alternativeQuestion.filter(
+                        (e) => e?.text === question?.questionD
+                      ).length > 0
+                    }
+                  />
+                  <label>{question?.questionD}</label>
+                </div>
               </div>
             </div>
           );
@@ -185,7 +192,7 @@ function SurveyForm() {
         {survey?.set_discursive_question?.map((question, index) => {
           return (
             <div key={question?.id}>
-              <h4>{question.title}</h4>
+              <h2>{question.title}</h2>
               <div>
                 <textarea
                   onChange={(e) => addDiscursive(e.target.value, index)}
@@ -200,17 +207,16 @@ function SurveyForm() {
         {survey?.set_boolean_question?.map((question, index) => {
           return (
             <div key={question?.id}>
-              <h4>{question.title}</h4>
+              <h2>{question.title}</h2>
               <div>
                 <select onChange={(e) => addBoolean(e.target.value, index)}>
-                  <option value={true}>Sim</option>
-                  <option value={false}>Não</option>
+                  <option value={true}>Verdadeiro</option>
+                  <option value={false}>Falso</option>
                 </select>
               </div>
             </div>
           );
         })}
-
         <button onClick={saveSurvey}> Enviar Respostas</button>
       </div>
     </div>
