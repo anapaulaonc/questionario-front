@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./CreateSurvey.css";
+import NavBar from "../NavBar/NavBar";
 
 function CreateSurvey() {
   let { id } = useParams();
@@ -123,6 +124,7 @@ function CreateSurvey() {
 
   return (
     <div className="create-survey-section">
+      <NavBar />
       <div className="create-survey-main">
         <h1>Criar Questionário</h1>
         <input
@@ -156,7 +158,9 @@ function CreateSurvey() {
               key={i}
               class="survey-input"
               placeholder="Escreva sua pergunta"
-              onChange={(e) => changeInput(i, "boolean", "title", e.target.value)}
+              onChange={(e) =>
+                changeInput(i, "boolean", "title", e.target.value)
+              }
               value={b.title}
             />
           );
@@ -213,7 +217,9 @@ function CreateSurvey() {
         <button class="survey-button" onClick={addAlternative} type="button">
           Adicionar questão alternativa
         </button>
-        <button class="survey-button" onClick={saveSurvey}>Criar</button>
+        <button class="survey-button" onClick={saveSurvey}>
+          Criar
+        </button>
       </div>
     </div>
   );

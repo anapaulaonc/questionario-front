@@ -31,7 +31,12 @@ function NavBar() {
   let choosepath = useHistory();
   return (
     <div className="NavBar">
-      <div className="icons">
+      <div
+        className="icons"
+        onClick={() => {
+          choosepath.push(`/minhapagina`);
+        }}
+      >
         <img src={profile_icon}></img>
       </div>
       <div className="icons" onClick={createSurvey}>

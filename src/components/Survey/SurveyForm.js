@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import NavBar from "../NavBar/NavBar";
 
 function SurveyForm() {
   let { id } = useParams();
@@ -118,6 +119,7 @@ function SurveyForm() {
 
   return (
     <div className="SurveyForm">
+      <NavBar />
       <div>
         <h2>{survey.title}</h2>
         <h5>Por: {user.email}</h5>

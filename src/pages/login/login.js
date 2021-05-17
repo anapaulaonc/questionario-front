@@ -17,6 +17,7 @@ export default function Login() {
       .then((response) => {
         if (response.status == 200) {
           localStorage.setItem("token", response.data?.token);
+          localStorage.setItem("id", response.data?.id);
           choosepath.push("/foryou");
         }
       })
